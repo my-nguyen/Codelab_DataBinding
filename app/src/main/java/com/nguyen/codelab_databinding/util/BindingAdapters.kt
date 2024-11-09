@@ -72,15 +72,10 @@ private fun getAssociatedColor(popularity: Popularity, context: Context): Int {
 }
 
 private fun getDrawablePopularity(popularity: Popularity, context: Context): Drawable? {
-    return when (popularity) {
-        Popularity.NORMAL -> {
-            ContextCompat.getDrawable(context, R.drawable.ic_person_black_96dp)
-        }
-        Popularity.POPULAR -> {
-            ContextCompat.getDrawable(context, R.drawable.ic_whatshot_black_96dp)
-        }
-        Popularity.STAR -> {
-            ContextCompat.getDrawable(context, R.drawable.ic_whatshot_black_96dp)
-        }
+    val drawableId = when (popularity) {
+        Popularity.NORMAL -> R.drawable.ic_person_black_96dp
+        Popularity.POPULAR -> R.drawable.ic_whatshot_black_96dp
+        Popularity.STAR -> R.drawable.ic_whatshot_black_96dp
     }
+    return ContextCompat.getDrawable(context, drawableId)
 }
